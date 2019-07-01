@@ -8,7 +8,7 @@ resource "aws_cloudwatch_metric_alarm" "high-cpu-jenkins-slaves-alarm" {
   period              = "120"
   statistic           = "Average"
   threshold           = "80"
-  dimensions {
+  dimensions = {
     AutoScalingGroupName = "${aws_autoscaling_group.jenkins_slaves.name}"
   }
   alarm_description = "This metric monitors ec2 cpu utilization"
@@ -31,7 +31,7 @@ resource "aws_cloudwatch_metric_alarm" "low-cpu-jenkins-slaves-alarm" {
   period              = "120"
   statistic           = "Average"
   threshold           = "20"
-  dimensions {
+  dimensions = {
     AutoScalingGroupName = "${aws_autoscaling_group.jenkins_slaves.name}"
   }
   alarm_description = "This metric monitors ec2 cpu utilization"
