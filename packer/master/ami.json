@@ -28,6 +28,22 @@
             "destination" : "./setup.sh"
         },
         {
+            "type" : "file",
+            "source" : "./security.groovy",
+            "destination" : "/tmp/security.groovy"
+        },
+        
+        {
+            "type" : "file",
+            "source" : "./pwd.sensitive",
+            "destination" : "/tmp/pwd.sensitive"
+        },
+        {
+            "type" : "file",
+            "source" : "./user.sensitive",
+            "destination" : "/tmp/user.sensitive"
+        },
+        {
             "type" : "shell",
             "script" : "./setup.sh",
             "execute_command" : "sudo -E -S sh '{{ .Path }}'"

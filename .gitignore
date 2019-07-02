@@ -7,3 +7,7 @@
 
 # .tfvars files
 *.tfvars
+
+# Sensitive
+terraform/ssh_ec2_key.pem
+*.sensitive
