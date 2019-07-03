@@ -1,7 +1,7 @@
 #!/bin/bash
 USER=$(cat /tmp/user.sensitive)
 PWD=$(cat /tmp/pwd.sensitive)
-for i in ssh-agent:latest ssh-credentials:latest ssh-slaves:latest
+for i in swarm
 do
    /usr/lib/jvm/jre-1.8.0-openjdk/bin/java \
    -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar \
@@ -9,3 +9,4 @@ do
    -auth $USER:$PWD \
    install-plugin $i
 done
+

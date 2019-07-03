@@ -15,6 +15,8 @@ instance.setSecurityRealm(hudsonRealm)
 
 def strategy = new FullControlOnceLoggedInAuthorizationStrategy()
 instance.setAuthorizationStrategy(strategy)
+instance.setSlaveAgentPort(50000)
+instance.setInstallState(InstallState.INITIAL_SETUP_COMPLETED)
 instance.save()
 
 Jenkins.instance.getInjector().getInstance(AdminWhitelistRule.class).setMasterKillSwitch(false)

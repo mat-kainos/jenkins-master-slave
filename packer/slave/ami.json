@@ -28,14 +28,14 @@
             "destination" : "./setup.sh"
         },
         {
+            "type" : "file",
+            "source" : "./swarm-client-3.17.jar",
+            "destination" : "./setup.sh"
+        },
+        {
             "type" : "shell",
             "script" : "./setup.sh",
             "execute_command" : "sudo -E -S sh '{{ .Path }}'"
-        },
-        {
-            "type" : "file",
-            "source" : "../keys/id_rsa",
-            "destination" : "/home/centos/id_rsa_jenkins"
         }
     ]
 }
