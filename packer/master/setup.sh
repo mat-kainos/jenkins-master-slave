@@ -18,5 +18,3 @@ sleep 30
 echo "Install plugins"
 chmod +x /tmp/install-plugins.sh
 /tmp/install-plugins.sh
-echo "Add public key to root"
-cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys

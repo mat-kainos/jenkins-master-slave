@@ -24,6 +24,7 @@ resource "aws_autoscaling_group" "jenkins_slaves" {
   vpc_zone_identifier  = ["${aws_subnet.subnet.id}"]
   min_size             = "${var.min_jenkins_slaves}"
   max_size             = "${var.max_jenkins_slaves}"
+  default_cooldown = 30
   depends_on           = ["aws_instance.jenkins_master"]
   lifecycle {
     create_before_destroy = true

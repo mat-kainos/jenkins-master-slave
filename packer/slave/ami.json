@@ -30,7 +30,7 @@
         {
             "type" : "file",
             "source" : "./swarm-client-3.17.jar",
-            "destination" : "./setup.sh"
+            "destination" : "/home/centos/swarm-client-3.17.jar"
         },
         {
             "type" : "shell",
