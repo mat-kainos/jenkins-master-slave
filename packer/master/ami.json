@@ -1,7 +1,7 @@
 {
     "variables" : {
         "region" : "eu-west-1",
-        "source_ami" : "ami-047bb4163c506cd98"
+        "source_ami" : "ami-0ff760d16d9497662"
     },
     "builders" : [
         {
@@ -10,7 +10,7 @@
             "region" : "{{user `region`}}",
             "instance_type" : "t2.micro",
             "source_ami" : "{{user `source_ami`}}",
-            "ssh_username" : "ec2-user",
+            "ssh_username" : "centos",
             "ami_name" : "jenkins-master-poc",
             "ami_description" : "Amazon Linux Image with Jenkins Server",
             "run_tags" : {
@@ -32,7 +32,11 @@
             "source" : "./security.groovy",
             "destination" : "/tmp/security.groovy"
         },
-        
+        {
+            "type" : "file",
+            "source" : "./install-plugins.sh",
+            "destination" : "/tmp/install-plugins.sh"
+        },
         {
             "type" : "file",
             "source" : "./pwd.sensitive",
@@ -44,9 +48,16 @@
             "destination" : "/tmp/user.sensitive"
         },
         {
+            "type" : "file",
+            "source" : "../keys/id_rsa.pub",
+            "destination" : "/tmp/id_rsa.pub"
+        },
+        {
             "type" : "shell",
             "script" : "./setup.sh",
             "execute_command" : "sudo -E -S sh '{{ .Path }}'"
         }
+
     ]
 }
+

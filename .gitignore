@@ -11,3 +11,4 @@
 # Sensitive
 terraform/ssh_ec2_key.pem
 *.sensitive
+*id_rsa*
