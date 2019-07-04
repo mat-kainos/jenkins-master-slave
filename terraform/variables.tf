@@ -18,19 +18,6 @@ variable "key_name" {
   default = ""
 }
 
-
-variable "jenkins_username" {
-  default = "test"
-}
-
-variable "jenkins_password" {
-  default = "test"
-}
-
-variable "jenkins_credentials_id" {
-  default = "creds-test"
-}
-
 variable "vpc_id" {
   default = "vpc-065f08191a72f1bec"
 }

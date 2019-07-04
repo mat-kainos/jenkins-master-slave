@@ -33,6 +33,36 @@
             "destination" : "/home/centos/swarm-client-3.17.jar"
         },
         {
+            "type" : "file",
+            "source" : "../jenkins_admin/pwd.sensitive",
+            "destination" : "/home/centos/pwd.sensitive"
+        },
+        {
+            "type" : "file",
+            "source" : "../jenkins_admin/user.sensitive",
+            "destination" : "/home/centos/user.sensitive"
+        },
+        {
+            "type" : "file",
+            "source" : "./jenkins-slave-exec.sh",
+            "destination" : "/home/centos/jenkins-slave-exec.sh"
+        },
+        {
+            "type" : "file",
+            "source" : "./jenkins-slave.sh",
+            "destination" : "/home/centos/jenkins-slave.sh"
+        },
+        {
+            "type" : "file",
+            "source" : "./jenkins-slave.service",
+            "destination" : "/home/centos/jenkins-slave.service"
+        },
+        {
+            "type" : "shell",
+            "inline" : "sudo -E -S mv /home/centos/jenkins-slave.service /etc/systemd/system/jenkins-slave.service"
+            
+        },
+        {
             "type" : "shell",
             "script" : "./setup.sh",
             "execute_command" : "sudo -E -S sh '{{ .Path }}'"

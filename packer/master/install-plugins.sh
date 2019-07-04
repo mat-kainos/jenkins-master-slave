@@ -1,6 +1,6 @@
 #!/bin/bash
-USER=$(cat /tmp/user.sensitive)
-PWD=$(cat /tmp/pwd.sensitive)
+USER=$(cat /home/centos/user.sensitive)
+PWD=$(cat /home/centos/pwd.sensitive)
 for i in swarm
 do
    /usr/lib/jvm/jre-1.8.0-openjdk/bin/java \

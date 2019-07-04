@@ -1,20 +1,21 @@
 #!/bin/bash
+WORK_DIR="/home/centos"
 case "$1" in 
 start)
-   /root/jenkins-slave.sh &
-   echo $!>/root/jenkins-slave.pid
+   $WORK_DIR/jenkins-slave-exec.sh start &
+   echo $!>$WORK_DIR/jenkins-slave.pid
    ;;
 stop)
-   kill `cat /root/jenkins-slave.pid`
-   rm /root/jenkins-slave.pid
+   kill `cat $WORK_DIR/jenkins-slave.pid`
+   rm $WORK_DIR/jenkins-slave.pid
    ;;
 restart)
    $0 stop
    $0 start
    ;;
 status)
-   if [ -e /root/jenkins-slave.pid ]; then
-      echo jenkins-slave is running, pid=`cat /root/jenkins-slave.pid`
+   if [ -e $WORK_DIR/jenkins-slave.pid ]; then
+      echo jenkins-slave is running, pid=`cat $WORK_DIR/jenkins-slave.pid`
    else
       echo jenkins-slave is NOT running
       exit 1

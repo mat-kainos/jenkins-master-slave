@@ -4,8 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/jenkins-slave.sh
-TimeoutStartSec=0
+User=iperf
+ExecStart=/root/jenkins-slave.sh start
+Restart=always
+
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
