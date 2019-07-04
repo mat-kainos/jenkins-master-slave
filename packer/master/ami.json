@@ -30,22 +30,22 @@
         {
             "type" : "file",
             "source" : "./security.groovy",
-            "destination" : "/home/centos/security.groovy"
+            "destination" : "/tmp/security.groovy"
         },
         {
             "type" : "file",
             "source" : "./install-plugins.sh",
-            "destination" : "/home/centos/install-plugins.sh"
+            "destination" : "/tmp/install-plugins.sh"
         },
         {
             "type" : "file",
             "source" : "../jenkins_admin/pwd.sensitive",
-            "destination" : "/home/centos/pwd.sensitive"
+            "destination" : "/tmp/pwd.sensitive"
         },
         {
             "type" : "file",
             "source" : "../jenkins_admin/user.sensitive",
-            "destination" : "/home/centos/user.sensitive"
+            "destination" : "/tmp/user.sensitive"
         },
         {
             "type" : "shell",

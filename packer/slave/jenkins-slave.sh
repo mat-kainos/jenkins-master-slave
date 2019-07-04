@@ -1,8 +1,8 @@
 #!/bin/bash
-WORK_DIR="/home/centos"
+WORK_DIR="/tmp"
 case "$1" in 
 start)
-   $WORK_DIR/jenkins-slave-exec.sh start &
+   $WORK_DIR/jenkins-slave-exec.sh &
    echo $!>$WORK_DIR/jenkins-slave.pid
    ;;
 stop)

@@ -12,9 +12,9 @@ yum install -y jenkins
 chkconfig jenkins on
 echo "Configure Jenkins"
 mkdir -p /var/lib/jenkins/init.groovy.d
-cp /home/centos/security.groovy /var/lib/jenkins/init.groovy.d/security.groovy
+cp /tmp/security.groovy /var/lib/jenkins/init.groovy.d/security.groovy
 service jenkins start
 sleep 30
 echo "Install plugins"
-chmod +x /home/centos/install-plugins.sh
-#/home/centos/install-plugins.sh
+chmod +x /tmp/install-plugins.sh
+sudo /tmp/install-plugins.sh
